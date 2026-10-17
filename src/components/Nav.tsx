@@ -41,7 +41,7 @@ export function Nav() {
 
       <nav className="section-shell flex h-[var(--header-h)] items-center justify-between" aria-label="Primary">
         <a href="#hero" className="flex items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center border border-brass-500/50 font-display text-sm tracking-[0.08em] text-brass-300">
+          <span className="grid h-9 w-9 place-items-center border border-accent/50 font-display text-sm tracking-[0.08em] text-accent">
             {profile.initials}
           </span>
           <span className="hidden font-display text-sm tracking-[0.02em] text-bone-100 sm:block">

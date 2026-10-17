@@ -42,7 +42,7 @@ export default function App() {
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           background:
-            "radial-gradient(120% 90% at 12% 8%, rgba(192,138,62,0.14) 0%, rgba(7,8,10,0) 52%), radial-gradient(90% 80% at 88% 96%, rgba(111,134,168,0.12) 0%, rgba(7,8,10,0) 55%)",
+            "radial-gradient(120% 90% at 12% 8%, rgba(255,255,255,0.06) 0%, rgba(8,8,8,0) 52%), radial-gradient(90% 80% at 88% 96%, rgba(160,160,160,0.07) 0%, rgba(8,8,8,0) 55%)",
         }}
       />
 

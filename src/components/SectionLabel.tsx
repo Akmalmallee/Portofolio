@@ -4,7 +4,7 @@ type SectionLabelProps = {
 };
 
 /**
- * The identity motif: a brass index and label over a hairline rule.
+ * The identity motif: a monochrome numeric index and label over a hairline rule.
  * Repeated at the top of every section so the page reads as one hand.
  */
 export function SectionLabel({ index, children }: SectionLabelProps) {

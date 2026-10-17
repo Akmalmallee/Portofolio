@@ -59,7 +59,7 @@ export function About() {
             <ul className="mt-6 flex flex-col gap-4">
               {focus.map((item) => (
                 <li key={item} className="flex gap-4 text-sm text-bone-300">
-                  <span className="mt-3 h-px w-4 shrink-0 bg-brass-500" aria-hidden="true" />
+                  <span className="mt-3 h-px w-4 shrink-0 bg-accent" aria-hidden="true" />
                   {item}
                 </li>
               ))}

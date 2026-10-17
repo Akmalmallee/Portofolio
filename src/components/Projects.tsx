@@ -80,7 +80,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
             ref={closeRef}
             type="button"
             onClick={() => onClose()}
-            className="grid h-11 w-11 shrink-0 place-items-center border border-bone-400/20 text-bone-100 transition-colors hover:border-brass-400 hover:text-brass-300"
+            className="grid h-11 w-11 shrink-0 place-items-center border border-bone-400/20 text-bone-100 transition-colors hover:border-accent hover:text-accent"
           >
             <span className="sr-only">Close detail</span>
             <span aria-hidden="true" className="text-lg leading-none">
@@ -90,6 +90,16 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
         </div>
 
         <p className="mt-6 text-bone-300">{project.summary}</p>
+
+        <img
+          src={project.image.src}
+          alt={project.image.alt}
+          width={project.image.width}
+          height={project.image.height}
+          loading="lazy"
+          decoding="async"
+          className="mt-8 w-full border border-accent/12 bg-ink-800 object-cover"
+        />
 
         <dl className="mt-8 grid gap-6">
           <div>
@@ -107,7 +117,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
           <ul className="mt-3 flex flex-col gap-2">
             {project.highlights.map((item) => (
               <li key={item} className="flex gap-3 text-sm text-bone-300">
-                <span className="mt-2 h-px w-3 shrink-0 bg-brass-500" aria-hidden="true" />
+                <span className="mt-2 h-px w-3 shrink-0 bg-accent" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -131,7 +141,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
               href={project.repoUrl}
               target="_blank"
               rel="noreferrer"
-              className="min-h-11 text-sm text-brass-300 underline decoration-brass-500/40 underline-offset-4 hover:text-brass-400"
+              className="min-h-11 text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:text-accent"
             >
               View repository
             </a>
@@ -172,7 +182,7 @@ export function Projects() {
               }`}
             >
               <div className="flex items-baseline gap-5 md:gap-8">
-                <span className="font-display text-sm text-brass-400 tabular-nums">
+                <span className="font-display text-sm text-accent tabular-nums">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
@@ -190,7 +200,7 @@ export function Projects() {
                 <button
                   type="button"
                   onClick={() => setActive(project)}
-                  className="min-h-11 whitespace-nowrap text-sm text-bone-100 underline decoration-brass-500/50 underline-offset-4 transition-colors hover:text-brass-300"
+                  className="min-h-11 whitespace-nowrap text-sm text-bone-100 underline decoration-accent/50 underline-offset-4 transition-colors hover:text-accent"
                 >
                   Read case
                 </button>

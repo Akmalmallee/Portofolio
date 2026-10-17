@@ -1,9 +1,9 @@
 # Akmal Syarief R. | Portfolio
 
 Personal portfolio for Akmal Syarief R., a web developer working across web,
-mobile, and interactive 3D. The page is built around a live 3D field: floating
-glass slabs, drifting gold dust, and a brushed brass orb, over a near-black
-editorial layout.
+mobile, and interactive 3D. The page is built around a live 3D field: framed panels
+of the three project screenshots floating in depth with drifting white dust, over a
+black-and-white editorial layout.
 
 ## Stack
 
@@ -29,7 +29,12 @@ npm run preview    # serve the production build
 Every word on the site lives in `src/data/content.ts`. Projects, skills,
 education, focus areas, contact details and socials are all read from there.
 
-## Assets to add
+## Assets
+
+- `public/images/projects/` - the three project screenshots (`rex-store.webp`,
+  `ticket-booking-app.webp`, `capybara-experience.webp`), optimized to WebP at
+  1600px wide. They are used both as the 3D panel textures and in the case-study
+  modal. Update the matching `image` entry in `src/data/content.ts` if you swap one.
 
 Drop these into `public/` when you have them:
 

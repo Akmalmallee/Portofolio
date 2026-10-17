@@ -1,12 +1,12 @@
 # Design Direction: Akmal Syarief R. Portfolio
 
-Owner-supplied direction: "dark luxe floating scene, elegant, not generic, 3D".
+Owner-supplied direction: "modern, clean, black and white, 3D".
 This file is the style direction. Every rule in `antislop.md` applies on top of it.
 
 ## Design Read
 
 Reading this as: a creative developer's personal portfolio for recruiters and
-collaborators, in an editorial dark-luxe language, dial ENERGY 3 / RHYTHM 3 / MOTION 3.
+collaborators, in a monochrome editorial language, dial ENERGY 3 / RHYTHM 3 / MOTION 3.
 
 ## Dials
 
@@ -21,26 +21,26 @@ collaborators, in an editorial dark-luxe language, dial ENERGY 3 / RHYTHM 3 / MO
 
 | Token | Hex | Role |
 | --- | --- | --- |
-| ink-950 | #07080A | page ground |
-| ink-900 | #0C0E11 | panel ground |
-| ink-800 | #14181D | raised surface |
-| bone-100 | #EFE9DF | primary text |
-| bone-300 | #C8C0B3 | body text |
-| bone-400 | #A79E90 | secondary text |
-| bone-500 | #8A8378 | meta text, verified AA (5.15:1 on ink-900) |
-| brass-500 | #C08A3E | the single accent |
-| brass-300 | #DDB06A | accent highlight only |
+| ink-950 | #080808 | page ground |
+| ink-900 | #0F0F0F | panel ground |
+| ink-800 | #171717 | raised surface |
+| bone-100 | #F5F5F5 | primary text |
+| bone-300 | #CFCFCF | body text |
+| bone-400 | #A6A6A6 | secondary text |
+| bone-500 | #8A8A8A | meta text, verified AA (5.55:1 on ink-900) |
+| accent | #FFFFFF | the single signal: focus ring, active/hover, hairlines, panel edges |
 
-Reason: near-black grounds a cinematic 3D scene (R-21: a dark default is justified
-here by the owner's chosen art direction, not by "dark looks tech"). Bone warm white
-keeps text from feeling clinical. Brass is the only accent, so it stays a signal
-instead of decoration. No second hue was added on purpose (R-13, R-29).
+Reason: a true black-and-white scheme keeps the eye on the screenshots and the
+typography instead of on a brand hue. Pure white is the one signal, spent only on
+interactive and structural marks (focus ring, hover, section hairlines, 3D panel
+edges) so it reads as intent, not decoration. No second hue exists at all (R-13,
+R-29); the earlier warm-brass accent was removed.
 
 ## Typography (R-06)
 
 - Display: **Fraunces Variable**. Reason: a high-contrast optical-size serif reads
-  as editorial and expensive, which is the register the owner asked for. It carries
-  the identity so no decorative chrome is needed.
+  as editorial and expensive, and it is the one piece of warmth left in a monochrome
+  page, so it carries the identity with no decorative chrome.
 - Body/UI: **Instrument Sans Variable**. Reason: a humanist grotesque that stays
   legible at small sizes and lets the serif hold the personality. Chosen over Inter
   and Geist specifically because those are the default picks a designer would not
@@ -48,15 +48,16 @@ instead of decoration. No second hue was added on purpose (R-13, R-29).
 
 ## Identity motif
 
-A single brass hairline that rules every section label, plus a fine film grain over
+A single white hairline that rules every section label, plus a fine film grain over
 the whole page. The motif repeats so the site feels authored by one hand.
 
 ## 3D field
 
-Near-black fog, one brass key light from camera-left, a cold fill from behind.
-Gold dust points drift slowly. Three glass slabs (the three projects) float at
-different depths and tilt toward the pointer. One brushed-brass orb sits low as a
-visual anchor. Bloom is dialed to a rim, not a glow wash (R-13).
+Near-black fog, one white key light from camera-left, a soft grey fill from behind.
+White dust points drift slowly. Three framed panels carry the three project
+screenshots, floating at different depths and tilting toward the pointer. Each panel
+keeps its source image aspect, so nothing is cropped or stretched. Bloom is dialed to
+a rim, not a glow wash (R-13).
 
-Reason for glass slabs: each slab is one real project, so the 3D objects are content,
-not filler.
+Reason for screenshot panels: each panel is one real project shown as it actually
+looks, so the 3D objects are content, not filler.

@@ -3,9 +3,9 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { motionState } from "./motionState";
 
-const COUNT = 900;
+const COUNT = 700;
 
-/** Soft round sprite so each point reads as dust, not a hard pixel. */
+/** Soft round white sprite so each point reads as drifting dust, not a hard pixel. */
 function makeDustSprite() {
   const size = 64;
   const canvas = document.createElement("canvas");
@@ -14,9 +14,9 @@ function makeDustSprite() {
   const context = canvas.getContext("2d")!;
 
   const gradient = context.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-  gradient.addColorStop(0, "rgba(255, 244, 224, 1)");
-  gradient.addColorStop(0.35, "rgba(224, 178, 106, 0.55)");
-  gradient.addColorStop(1, "rgba(192, 138, 62, 0)");
+  gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
+  gradient.addColorStop(0.4, "rgba(255, 255, 255, 0.5)");
+  gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
 
   context.fillStyle = gradient;
   context.fillRect(0, 0, size, size);
@@ -26,11 +26,11 @@ function makeDustSprite() {
   return texture;
 }
 
-type GoldDustProps = {
+type DustProps = {
   animate: boolean;
 };
 
-export function GoldDust({ animate }: GoldDustProps) {
+export function Dust({ animate }: DustProps) {
   const points = useRef<THREE.Points>(null);
   const sprite = useMemo(() => makeDustSprite(), []);
 
@@ -52,7 +52,6 @@ export function GoldDust({ animate }: GoldDustProps) {
     points.current.rotation.y += delta * 0.02;
     points.current.rotation.x = Math.sin(time * 0.06) * 0.04;
 
-    // Drift downward against the scroll so the field feels like it has depth.
     points.current.position.y = motionState.scroll * 3.2;
   });
 
@@ -63,10 +62,10 @@ export function GoldDust({ animate }: GoldDustProps) {
       </bufferGeometry>
       <pointsMaterial
         map={sprite}
-        size={0.09}
+        size={0.07}
         sizeAttenuation
         transparent
-        opacity={0.75}
+        opacity={0.5}
         depthWrite={false}
         blending={THREE.AdditiveBlending}
         toneMapped={false}

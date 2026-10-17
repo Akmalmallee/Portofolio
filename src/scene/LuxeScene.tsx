@@ -3,9 +3,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, Lightformer } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import * as THREE from "three";
-import { AnchorOrb } from "./AnchorOrb";
+import { Dust } from "./Dust";
 import { GlassSlabs } from "./GlassSlabs";
-import { GoldDust } from "./GoldDust";
 import { attachMotionListeners, motionState } from "./motionState";
 
 function CameraRig({ animate }: { animate: boolean }) {
@@ -30,30 +29,29 @@ function CameraRig({ animate }: { animate: boolean }) {
   return null;
 }
 
-function SceneContents({ animate, samples }: { animate: boolean; samples: number }) {
+function SceneContents({ animate }: { animate: boolean }) {
   return (
     <>
-      <fog attach="fog" args={["#07080a", 7, 16]} />
+      <fog attach="fog" args={["#080808", 8, 18]} />
 
-      <ambientLight intensity={0.22} color="#8fa0b8" />
-      <directionalLight position={[-5, 4, 3]} intensity={2.1} color="#ffd9a0" />
-      <directionalLight position={[5, -1, 2]} intensity={0.5} color="#6f86a8" />
-      <pointLight position={[0, 2, -5]} intensity={14} color="#c08a3e" distance={16} decay={2} />
+      <ambientLight intensity={0.4} color="#ffffff" />
+      <directionalLight position={[-5, 4, 3]} intensity={1.7} color="#ffffff" />
+      <directionalLight position={[5, -1, 2]} intensity={0.45} color="#cfcfcf" />
+      <pointLight position={[0, 2, -5]} intensity={9} color="#ffffff" distance={20} decay={2} />
 
       <Environment resolution={256} frames={1}>
-        <Lightformer intensity={2.6} color="#ffd9a0" form="rect" position={[-5, 2, 3]} scale={[10, 6, 1]} rotation-y={Math.PI / 2} />
-        <Lightformer intensity={0.9} color="#5f7aa0" form="rect" position={[5, -1, -2]} scale={[8, 6, 1]} rotation-y={-Math.PI / 2} />
-        <Lightformer intensity={0.5} color="#c08a3e" form="ring" position={[0, 4, -4]} scale={4} />
+        <Lightformer intensity={2.2} color="#ffffff" form="rect" position={[-5, 2, 3]} scale={[10, 6, 1]} rotation-y={Math.PI / 2} />
+        <Lightformer intensity={0.7} color="#a6a6a6" form="rect" position={[5, -1, -2]} scale={[8, 6, 1]} rotation-y={-Math.PI / 2} />
+        <Lightformer intensity={0.4} color="#ffffff" form="ring" position={[0, 4, -4]} scale={4} />
       </Environment>
 
-      <GoldDust animate={animate} />
-      <GlassSlabs animate={animate} samples={samples} />
-      <AnchorOrb animate={animate} />
+      <Dust animate={animate} />
+      <GlassSlabs animate={animate} />
 
       <CameraRig animate={animate} />
 
       <EffectComposer enableNormalPass={false}>
-        <Bloom intensity={0.42} luminanceThreshold={0.62} luminanceSmoothing={0.35} mipmapBlur radius={0.6} />
+        <Bloom intensity={0.3} luminanceThreshold={0.72} luminanceSmoothing={0.35} mipmapBlur radius={0.55} />
       </EffectComposer>
     </>
   );
@@ -75,7 +73,6 @@ export function LuxeScene({ reducedMotion, quality }: LuxeSceneProps) {
   }, [reducedMotion]);
 
   const animate = !reducedMotion;
-  const samples = quality === "high" ? 6 : 2;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
@@ -87,7 +84,7 @@ export function LuxeScene({ reducedMotion, quality }: LuxeSceneProps) {
         gl={{ antialias: quality === "high", powerPreference: "high-performance", alpha: true }}
       >
         <Suspense fallback={null}>
-          <SceneContents animate={animate} samples={samples} />
+          <SceneContents animate={animate} />
         </Suspense>
       </Canvas>
     </div>

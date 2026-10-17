@@ -1,17 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink-950: #07080a;
-  --color-ink-900: #0c0e11;
-  --color-ink-800: #14181d;
-  --color-bone-100: #efe9df;
-  --color-bone-300: #c8c0b3;
-  --color-bone-400: #a79e90;
-  --color-bone-500: #8a8378;
+  --color-ink-950: #080808;
+  --color-ink-900: #0f0f0f;
+  --color-ink-800: #171717;
+  --color-bone-100: #f5f5f5;
+  --color-bone-300: #cfcfcf;
+  --color-bone-400: #a6a6a6;
+  --color-bone-500: #8a8a8a;
 
-  --color-brass-300: #ddb06a;
-  --color-brass-400: #d09a4a;
-  --color-brass-500: #c08a3e;
+  --color-accent: #ffffff;
 
   --font-display: "Fraunces Variable", "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: "Instrument Sans Variable", "Instrument Sans", ui-sans-serif,
@@ -63,7 +61,7 @@
   }
 
   * {
-    border-color: color-mix(in srgb, var(--color-bone-400) 14%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 16%, transparent);
   }
 
   html {
@@ -105,12 +103,12 @@
   }
 
   ::selection {
-    background-color: var(--color-brass-500);
+    background-color: var(--color-accent);
     color: var(--color-ink-950);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-brass-400);
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: var(--radius-sm);
   }
@@ -121,7 +119,7 @@
 }
 
 @utility rule {
-  border-top: 1px solid color-mix(in srgb, var(--color-brass-500) 45%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-accent) 24%, transparent);
 }
 
 @utility eyebrow {
@@ -130,12 +128,12 @@
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-brass-400);
+  color: var(--color-bone-400);
 }
 
 @utility surface {
   background-color: color-mix(in srgb, var(--color-ink-900) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-bone-400) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 14%, transparent);
 }
 
 @utility grain-overlay {

@@ -31,7 +31,7 @@ export function Hero() {
           >
             Akmal
             <br />
-            <span className="italic text-brass-300">Syarief R.</span>
+            <span className="italic text-accent">Syarief R.</span>
           </motion.h1>
 
           <motion.p {...rise(0.24)} className="mt-8 measure text-lg text-bone-300">
@@ -41,7 +41,7 @@ export function Hero() {
           <motion.div {...rise(0.32)} className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <a
               href="#work"
-              className="group inline-flex min-h-11 items-center gap-3 border border-brass-500/60 px-6 text-sm tracking-[0.02em] text-bone-100 transition-colors hover:border-brass-300 hover:text-brass-300"
+              className="group inline-flex min-h-11 items-center gap-3 border border-accent/60 px-6 text-sm tracking-[0.02em] text-bone-100 transition-colors hover:border-accent hover:text-accent"
             >
               See the work
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
@@ -50,7 +50,7 @@ export function Hero() {
             </a>
             <a
               href={`mailto:${profile.email}`}
-              className="min-h-11 text-sm text-bone-400 underline decoration-brass-500/40 underline-offset-4 transition-colors hover:text-bone-100"
+              className="min-h-11 text-sm text-bone-400 underline decoration-accent/40 underline-offset-4 transition-colors hover:text-bone-100"
             >
               {profile.email}
             </a>
@@ -58,7 +58,7 @@ export function Hero() {
 
           <motion.div {...rise(0.4)} className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2">
             <span className="flex items-center gap-2 text-xs text-bone-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-brass-400" aria-hidden="true" />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
               {profile.availability}
             </span>
             <span className="text-xs text-bone-500">{profile.disciplines.join(" / ")}</span>
@@ -79,7 +79,7 @@ export function Hero() {
             <div className="aspect-[4/5] w-full">
               {photoFailed ? (
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3">
-                  <span className="grid h-20 w-20 place-items-center border border-brass-500/40 font-display text-2xl text-brass-300">
+                  <span className="grid h-20 w-20 place-items-center border border-accent/40 font-display text-2xl text-accent">
                     {profile.initials}
                   </span>
                   <span className="text-xs text-bone-500">Photo coming soon</span>

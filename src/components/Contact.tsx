@@ -15,20 +15,20 @@ export function Contact() {
             <Reveal delay={0.05}>
               <h2 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.98] text-bone-100">
                 If something here fits what you are building,
-                <span className="italic text-brass-300"> say hello.</span>
+                <span className="italic text-accent"> say hello.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
               <a
                 href={`mailto:${profile.email}`}
-                className="mt-10 inline-block font-display text-[clamp(1.25rem,3vw,2rem)] break-all text-bone-100 underline decoration-brass-500/50 underline-offset-[10px] transition-colors hover:text-brass-300"
+                className="mt-10 inline-block font-display text-[clamp(1.25rem,3vw,2rem)] break-all text-bone-100 underline decoration-accent/50 underline-offset-[10px] transition-colors hover:text-accent"
               >
                 {profile.email}
               </a>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-8 flex items-center gap-2 text-sm text-bone-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-brass-400" aria-hidden="true" />
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
                 {profile.availability}
               </p>
             </Reveal>
@@ -44,7 +44,7 @@ export function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex min-h-14 items-center justify-between border-b border-bone-400/12 text-bone-100 transition-colors hover:text-brass-300"
+                      className="flex min-h-14 items-center justify-between border-b border-bone-400/12 text-bone-100 transition-colors hover:text-accent"
                     >
                       <span className="text-sm">{social.label}</span>
                       <span className="text-sm text-bone-400">@{social.handle}</span>

@@ -5,6 +5,13 @@
 
 export type ProjectStatus = "prototype" | "in progress" | "completed";
 
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -16,6 +23,7 @@ export type Project = {
   year: string;
   status: ProjectStatus;
   highlights: string[];
+  image: ProjectImage;
   repoUrl: string | null;
   liveUrl: string | null;
 };
@@ -73,6 +81,12 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/Akmalmallee/Rex-Store",
     liveUrl: null,
+    image: {
+      src: "/images/projects/rex-store.webp",
+      alt: "Preview of the Rex Store commerce interface",
+      width: 1600,
+      height: 893,
+    },
   },
   {
     id: "ticket-booking-app",
@@ -94,6 +108,12 @@ export const projects: Project[] = [
     ],
     repoUrl: null,
     liveUrl: null,
+    image: {
+      src: "/images/projects/ticket-booking-app.webp",
+      alt: "Preview of the Ticket Booking App screens",
+      width: 1600,
+      height: 1195,
+    },
   },
   {
     id: "capybara-experience",
@@ -115,6 +135,12 @@ export const projects: Project[] = [
     ],
     repoUrl: null,
     liveUrl: null,
+    image: {
+      src: "/images/projects/capybara-experience.webp",
+      alt: "Preview of the Capybara Experience 3D scene",
+      width: 1600,
+      height: 893,
+    },
   },
 ];
 
