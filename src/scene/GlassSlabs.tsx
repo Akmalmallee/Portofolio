@@ -12,11 +12,11 @@ type Slab = {
   phase: number;
 };
 
-/** One panel per project, staggered in depth so the field has a front and a back. */
+/** One panel per project, staggered in depth behind the portrait so nothing crosses the text. */
 const SLABS: Slab[] = [
-  { position: [-1.5, 0.7, -1.0], rotation: [0.05, 0.34, 0.03], scale: 0.92, phase: 0 },
-  { position: [2.6, -0.5, -2.6], rotation: [-0.05, -0.42, -0.03], scale: 0.9, phase: 2.1 },
-  { position: [-0.5, -2.4, -4.4], rotation: [0.1, 0.16, 0.06], scale: 0.8, phase: 4.2 },
+  { position: [3.5, 1.0, -1.3], rotation: [0.05, -0.4, 0.03], scale: 0.86, phase: 0 },
+  { position: [4.6, -0.9, -3.1], rotation: [-0.05, -0.5, -0.03], scale: 0.8, phase: 2.1 },
+  { position: [2.7, -2.7, -4.7], rotation: [0.1, -0.2, 0.06], scale: 0.68, phase: 4.2 },
 ];
 
 const PANEL_HEIGHT = 1.85;

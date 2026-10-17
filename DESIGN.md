@@ -51,13 +51,22 @@ R-29); the earlier warm-brass accent was removed.
 A single white hairline that rules every section label, plus a fine film grain over
 the whole page. The motif repeats so the site feels authored by one hand.
 
+## Hero
+
+The hero leads with the portrait, not the name: a tall grayscale cutout stands at
+full height on the right, faded into the black at its base so the figure emerges
+from the ground. The wordmark is deliberately smaller than the portrait so there is
+exactly one focal point on the first screen. Reason: the owner asked for the face to
+be the first thing seen, and a monochrome cutout on black is the cleanest way to do
+that without a framed photo rectangle.
+
 ## 3D field
 
 Near-black fog, one white key light from camera-left, a soft grey fill from behind.
 White dust points drift slowly. Three framed panels carry the three project
-screenshots, floating at different depths and tilting toward the pointer. Each panel
-keeps its source image aspect, so nothing is cropped or stretched. Bloom is dialed to
-a rim, not a glow wash (R-13).
+screenshots, floating behind the portrait so they read as depth around the figure
+without crossing the text column. Each panel keeps its source image aspect, so
+nothing is cropped or stretched. Bloom is dialed to a rim, not a glow wash (R-13).
 
 Reason for screenshot panels: each panel is one real project shown as it actually
 looks, so the 3D objects are content, not filler.

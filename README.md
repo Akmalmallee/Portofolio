@@ -35,13 +35,14 @@ education, focus areas, contact details and socials are all read from there.
   `ticket-booking-app.webp`, `capybara-experience.webp`), optimized to WebP at
   1600px wide. They are used both as the 3D panel textures and in the case-study
   modal. Update the matching `image` entry in `src/data/content.ts` if you swap one.
-
-Drop these into `public/` when you have them:
-
-- `akmal.jpg` - a portrait, 4:5 crop works best. Until it exists the hero shows
+- `public/akmal.webp` - the hero portrait, a square-free cutout (transparent
+  background) shown grayscale at 339x736. Replace it with a higher-resolution
+  export of the same crop if you have one, and keep the `width`/`height` on the
+  `<img>` in `src/components/Hero.tsx` in sync. Until a file exists the hero shows
   an initials placeholder labelled "Photo coming soon".
-- `og-image.png` - only needed if you add Open Graph image tags back to
-  `index.html`.
+
+Drop `og-image.png` into `public/` only if you add Open Graph image tags back to
+`index.html`.
 
 ## Deployment
 
