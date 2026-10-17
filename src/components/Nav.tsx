@@ -78,7 +78,7 @@ export function Nav() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-bone-400/15 bg-ink-950/95 backdrop-blur-md md:hidden">
+        <div id="mobile-menu" className="border-t border-bone-400/15 bg-ink-950/95 md:hidden">
           <ul className="section-shell flex flex-col py-2">
             {LINKS.map((link) => (
               <li key={link.href}>
