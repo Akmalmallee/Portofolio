@@ -1,36 +1,68 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { projects, type Project } from "../data/content";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
+const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 function ProjectDetail({ project, onClose }: { project: Project; onClose: () => void }) {
+  const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const previous = document.activeElement as HTMLElement | null;
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const shell = document.getElementById("app-shell");
+    const overflow = document.body.style.overflow;
+
+    shell?.setAttribute("inert", "");
+    document.body.style.overflow = "hidden";
     closeRef.current?.focus();
 
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", onKey);
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (event.key !== "Tab") return;
 
-    const overflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusable = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
+        (element) => element.offsetParent !== null,
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement;
+
+      if (event.shiftKey && (active === first || active === panel)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
 
     return () => {
-      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("keydown", onKeyDown);
+      shell?.removeAttribute("inert");
       document.body.style.overflow = overflow;
-      previous?.focus();
+      previouslyFocused?.focus();
     };
   }, [onClose]);
 
   return (
     <div
       className="fixed inset-0 z-40 flex items-stretch justify-end bg-ink-950/70 p-0 backdrop-blur-sm md:p-6"
-      onClick={onClose}
+      onClick={() => onClose()}
     >
       <div
+        ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-detail-title"
@@ -47,7 +79,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
           <button
             ref={closeRef}
             type="button"
-            onClick={onClose}
+            onClick={() => onClose()}
             className="grid h-11 w-11 shrink-0 place-items-center border border-bone-400/20 text-bone-100 transition-colors hover:border-brass-400 hover:text-brass-300"
           >
             <span className="sr-only">Close detail</span>
@@ -93,7 +125,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
           </ul>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-6 pt-6 rule">
+        <div className="rule mt-10 flex flex-wrap items-center gap-6 pt-6">
           {project.repoUrl ? (
             <a
               href={project.repoUrl}
@@ -117,6 +149,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
 
 export function Projects() {
   const [active, setActive] = useState<Project | null>(null);
+  const close = useCallback(() => setActive(null), []);
 
   return (
     <section id="work" className="section-shell relative z-10 py-28 md:py-40">
@@ -168,7 +201,8 @@ export function Projects() {
         <li className="rule" aria-hidden="true" />
       </ul>
 
-      {active && <ProjectDetail project={active} onClose={() => setActive(null)} />}
+      {active &&
+        createPortal(<ProjectDetail project={active} onClose={close} />, document.body)}
     </section>
   );
 }

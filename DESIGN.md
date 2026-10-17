@@ -25,7 +25,9 @@ collaborators, in an editorial dark-luxe language, dial ENERGY 3 / RHYTHM 3 / MO
 | ink-900 | #0C0E11 | panel ground |
 | ink-800 | #14181D | raised surface |
 | bone-100 | #EFE9DF | primary text |
+| bone-300 | #C8C0B3 | body text |
 | bone-400 | #A79E90 | secondary text |
+| bone-500 | #8A8378 | meta text, verified AA (5.15:1 on ink-900) |
 | brass-500 | #C08A3E | the single accent |
 | brass-300 | #DDB06A | accent highlight only |
 

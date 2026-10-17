@@ -4,17 +4,14 @@
   --color-ink-950: #07080a;
   --color-ink-900: #0c0e11;
   --color-ink-800: #14181d;
-  --color-ink-700: #1d222a;
-
   --color-bone-100: #efe9df;
   --color-bone-300: #c8c0b3;
   --color-bone-400: #a79e90;
-  --color-bone-500: #7d766b;
+  --color-bone-500: #8a8378;
 
   --color-brass-300: #ddb06a;
   --color-brass-400: #d09a4a;
   --color-brass-500: #c08a3e;
-  --color-brass-600: #9d6f2f;
 
   --font-display: "Fraunces Variable", "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: "Instrument Sans Variable", "Instrument Sans", ui-sans-serif,
@@ -72,6 +69,12 @@
   html {
     scroll-behavior: smooth;
     background-color: var(--color-ink-950);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   body {

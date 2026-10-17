@@ -79,13 +79,6 @@ export function LuxeScene({ reducedMotion, quality }: LuxeSceneProps) {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(120% 90% at 12% 8%, rgba(192,138,62,0.14) 0%, rgba(7,8,10,0) 52%), radial-gradient(90% 80% at 88% 96%, rgba(111,134,168,0.12) 0%, rgba(7,8,10,0) 55%)",
-        }}
-      />
       <Canvas
         className="absolute inset-0"
         dpr={[1, quality === "high" ? 1.8 : 1.25]}

@@ -31,7 +31,21 @@ export default function App() {
   const quality = useQuality();
 
   return (
-    <div className="relative min-h-[100svh] overflow-x-hidden">
+    <div id="app-shell" className="relative min-h-[100svh] overflow-x-hidden">
+      {/*
+        The atmospheric backdrop renders whether or not WebGL exists, so the page
+        never collapses to a flat void and there is no pop-in while the 3D chunk loads.
+      */}
+      <div
+        data-backdrop
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          background:
+            "radial-gradient(120% 90% at 12% 8%, rgba(192,138,62,0.14) 0%, rgba(7,8,10,0) 52%), radial-gradient(90% 80% at 88% 96%, rgba(111,134,168,0.12) 0%, rgba(7,8,10,0) 55%)",
+        }}
+      />
+
       {webglSupported && (
         <Suspense fallback={null}>
           <LuxeScene reducedMotion={reducedMotion} quality={quality} />
